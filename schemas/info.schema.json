@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/lolPants/beatmap-schemas/master/info.schema.json",
+  "$id": "https://raw.githubusercontent.com/lolPants/beatmap-schemas/master/schemas/info.schema.json",
   "type": "object",
   "title": "Info",
   "description": "Beat Saber Beatmap Info",
