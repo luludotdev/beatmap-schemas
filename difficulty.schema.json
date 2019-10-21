@@ -1,0 +1,239 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/lolPants/beatmap-schemas/master/difficulty.schema.json",
+  "type": "object",
+  "title": "Difficulty",
+  "description": "Beat Saber Beatmap Level",
+  "additionalProperties": false,
+  "required": [
+    "_version",
+    "_events",
+    "_notes",
+    "_obstacles"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "_version": {
+      "$id": "#/properties/_version",
+      "type": "string",
+      "title": "Beatmap Version",
+      "default": "2.0.0",
+      "examples": [
+        "2.0.0"
+      ],
+      "pattern": "^(0|[2-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+    },
+    "_events": {
+      "$id": "#/properties/_events",
+      "type": "array",
+      "title": "Events",
+      "description": "Environment and lighting events",
+      "items": { "$ref": "#/definitions/event" }
+    },
+    "_notes": {
+      "$id": "#/properties/_notes",
+      "type": "array",
+      "title": "Notes and Bombs",
+      "items": { "$ref": "#/definitions/note" }
+    },
+    "_obstacles": {
+      "$id": "#/properties/_obstacles",
+      "type": "array",
+      "title": "Obstacles",
+      "description": "Walls",
+      "items": { "$ref": "#/definitions/obstacle" }
+    },
+    "_customData": {
+      "$id": "#/properties/_customData",
+      "type": "object",
+      "title": "Custom Data",
+      "description": "Difficulty custom data",
+      "additionalProperties": true,
+      "required": [],
+      "properties": {
+        "_bpmChanges": {
+          "$id": "#/properties/_customData/properties/_bpmChanges",
+          "type": "array",
+          "title": "BPM Changes",
+          "description": "Only used in mapping programs",
+          "items": { "$ref": "#/definitions/bpmChange" }
+        },
+        "_bookmarks": {
+          "$id": "#/properties/_customData/properties/_bookmarks",
+          "type": "array",
+          "title": "Bookmarks",
+          "description": "Only used in mapping programs",
+          "items": { "$ref": "#/definitions/bookmark" }
+        },
+        "_time": {
+          "$id": "#/properties/_customData/properties/_time",
+          "type": "integer",
+          "title": "Time spent Mapping",
+          "description": "Only used in mapping programs"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "event": {
+      "$id": "#/definitions/event",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_time",
+        "_type",
+        "_value"
+      ],
+      "properties": {
+        "_time": {
+          "$id": "#/definitions/event/properties/_time",
+          "type": "number"
+        },
+        "_type": {
+          "$id": "#/definitions/event/properties/_type",
+          "type": "integer"
+        },
+        "_value": {
+          "$id": "#/definitions/event/properties/_value",
+          "type": "integer"
+        }
+      }
+    },
+    "note": {
+      "$id": "#/definitions/note",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_cutDirection",
+        "_lineIndex",
+        "_lineLayer",
+        "_time",
+        "_type"
+      ],
+      "properties": {
+        "_cutDirection": {
+          "$id": "#/definitions/note/properties/_cutDirection",
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "_lineIndex": {
+          "$id": "#/definitions/note/properties/_lineIndex",
+          "type": "integer"
+        },
+        "_lineLayer": {
+          "$id": "#/definitions/note/properties/_lineLayer",
+          "type": "integer"
+        },
+        "_time": {
+          "$id": "#/definitions/note/properties/_time",
+          "type": "number"
+        },
+        "_type": {
+          "$id": "#/definitions/note/properties/_type",
+          "type": "integer",
+          "examples": [
+            0,
+            1,
+            3
+          ]
+        }
+      }
+    },
+    "obstacle": {
+      "$id": "#/definitions/obstacle",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_duration",
+        "_lineIndex",
+        "_time",
+        "_type",
+        "_width"
+      ],
+      "properties": {
+        "_duration": {
+          "$id": "#/definitions/obstacle/properties/_duration",
+          "type": "number"
+        },
+        "_lineIndex": {
+          "$id": "#/definitions/obstacle/properties/_lineIndex",
+          "type": "integer"
+        },
+        "_time": {
+          "$id": "#/definitions/obstacle/properties/_time",
+          "type": "number"
+        },
+        "_type": {
+          "$id": "#/definitions/obstacle/properties/_type",
+          "type": "integer"
+        },
+        "_width": {
+          "$id": "#/definitions/obstacle/properties/_width",
+          "type": "integer"
+        }
+      }
+    },
+    "bookmark": {
+      "$id": "#/definitions/bookmark",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_name",
+        "_time"
+      ],
+      "properties": {
+        "_name": {
+          "$id": "#/definitions/bookmark/properties/_name",
+          "type": "string",
+          "pattern": "^(.+)$"
+        },
+        "_time": {
+          "$id": "#/definitions/bookmark/properties/_time",
+          "type": "number"
+        }
+      }
+    },
+    "bpmChange": {
+      "$id": "#/definitions/bpmChange",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_beatsPerBar",
+        "_bpm",
+        "_metronomeOffset",
+        "_time"
+      ],
+      "properties": {
+        "_beatsPerBar": {
+          "$id": "#/definitions/bpmChange/properties/_beatsPerBar",
+          "type": "integer"
+        },
+        "_bpm": {
+          "$id": "#/definitions/bpmChange/properties/_bpm",
+          "type": "number"
+        },
+        "_metronomeOffset": {
+          "$id": "#/definitions/bpmChange/properties/_metronomeOffset",
+          "type": "integer"
+        },
+        "_time": {
+          "$id": "#/definitions/bpmChange/properties/_time",
+          "type": "number"
+        }
+      }
+    }
+  }
+}
