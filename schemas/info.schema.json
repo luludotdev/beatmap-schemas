@@ -166,6 +166,7 @@
       "$id": "#/properties/_difficultyBeatmapSets",
       "type": "array",
       "title": "Array of Beatmap Sets",
+      "minItems": 1,
       "items": { "$ref": "#/definitions/beatmapSet" }
     }
   },
@@ -259,6 +260,7 @@
         "_difficultyBeatmaps": {
           "$id": "#/definitions/beatmapSet/properties/_difficultyBeatmaps",
           "type": "array",
+          "minItems": 1,
           "items": { "$ref": "#/definitions/beatmap" }
         }
       }
