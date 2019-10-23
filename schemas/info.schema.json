@@ -221,7 +221,8 @@
         "_name": {
           "$id": "#/definitions/contributor/properties/_name",
           "type": "string",
-          "title": "Contributor Name"
+          "title": "Contributor Name",
+          "pattern": "^(.+)$"
         },
         "_iconPath": {
           "$id": "#/definitions/contributor/properties/_iconPath",
