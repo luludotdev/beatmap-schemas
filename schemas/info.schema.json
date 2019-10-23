@@ -250,9 +250,10 @@
             "Standard",
             "OneSaber",
             "NoArrows",
-            "Lightshow"
+            "Lightshow",
+            "Lawless"
           ],
-          "pattern": "^(.*)$"
+          "pattern": "^(.+)$"
         },
         "_difficultyBeatmaps": {
           "$id": "#/definitions/beatmapSet/properties/_difficultyBeatmaps",
