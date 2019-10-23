@@ -117,7 +117,7 @@
         "_cutDirection": {
           "$id": "#/definitions/note/properties/_cutDirection",
           "type": "integer",
-          "enum": [
+          "examples": [
             0,
             1,
             2,
