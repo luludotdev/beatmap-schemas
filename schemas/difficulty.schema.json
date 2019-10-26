@@ -162,7 +162,7 @@
           "$id": "#/definitions/note/properties/_customData",
           "type": "object",
           "title": "Custom Data",
-          "description": "Note custom data",
+          "description": "Note / bomb custom data",
           "additionalProperties": true,
           "required": []
         }
