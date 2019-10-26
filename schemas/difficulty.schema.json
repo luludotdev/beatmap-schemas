@@ -104,7 +104,7 @@
           "$id": "#/definitions/note/properties/_customData",
           "type": "object",
           "title": "Custom Data",
-          "description": "Lighting event  custom data",
+          "description": "Environment / lighting event custom data",
           "additionalProperties": true,
           "required": []
         }
