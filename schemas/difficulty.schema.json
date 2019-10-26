@@ -99,6 +99,14 @@
         "_value": {
           "$id": "#/definitions/event/properties/_value",
           "type": "integer"
+        },
+        "_customData": {
+          "$id": "#/definitions/note/properties/_customData",
+          "type": "object",
+          "title": "Custom Data",
+          "description": "Environment / lighting event custom data",
+          "additionalProperties": true,
+          "required": []
         }
       }
     },
@@ -149,6 +157,14 @@
             1,
             3
           ]
+        },
+        "_customData": {
+          "$id": "#/definitions/note/properties/_customData",
+          "type": "object",
+          "title": "Custom Data",
+          "description": "Note / bomb custom data",
+          "additionalProperties": true,
+          "required": []
         }
       }
     },
@@ -183,6 +199,14 @@
         "_width": {
           "$id": "#/definitions/obstacle/properties/_width",
           "type": "integer"
+        },
+        "_customData": {
+          "$id": "#/definitions/obstacle/properties/_customData",
+          "type": "object",
+          "title": "Custom Data",
+          "description": "Obstacle custom data",
+          "additionalProperties": true,
+          "required": []
         }
       }
     },
