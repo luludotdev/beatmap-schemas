@@ -90,15 +90,21 @@
       "properties": {
         "_time": {
           "$id": "#/definitions/event/properties/_time",
-          "type": "number"
+          "type": "number",
+          "title": "Time",
+          "description": "Time offset in beats"
         },
         "_type": {
           "$id": "#/definitions/event/properties/_type",
-          "type": "integer"
+          "type": "integer",
+          "title": "Type",
+          "description": "Type of this event"
         },
         "_value": {
           "$id": "#/definitions/event/properties/_value",
-          "type": "integer"
+          "type": "integer",
+          "title": "Value",
+          "description": "Parameter value for this event"
         },
         "_customData": {
           "$id": "#/definitions/note/properties/_customData",
@@ -139,19 +145,27 @@
         },
         "_lineIndex": {
           "$id": "#/definitions/note/properties/_lineIndex",
-          "type": "integer"
+          "type": "integer",
+          "title": "Line Index",
+          "description": "Note horizontal position, starting at far left"
         },
         "_lineLayer": {
           "$id": "#/definitions/note/properties/_lineLayer",
-          "type": "integer"
+          "type": "integer",
+          "title": "Line Layer",
+          "description": "Note vertical position, starting at bottom"
         },
         "_time": {
           "$id": "#/definitions/note/properties/_time",
-          "type": "number"
+          "type": "number",
+          "title": "Time",
+          "description": "Time offset in beats"
         },
         "_type": {
           "$id": "#/definitions/note/properties/_type",
           "type": "integer",
+          "title": "Type",
+          "description": "Type of this note",
           "examples": [
             0,
             1,
@@ -182,23 +196,37 @@
       "properties": {
         "_duration": {
           "$id": "#/definitions/obstacle/properties/_duration",
-          "type": "number"
+          "type": "number",
+          "title": "Duration",
+          "description": "Duration in beats"
         },
         "_lineIndex": {
           "$id": "#/definitions/obstacle/properties/_lineIndex",
-          "type": "integer"
+          "type": "integer",
+          "title": "Line Index",
+          "description": "Note horizontal position, starting at far left"
         },
         "_time": {
           "$id": "#/definitions/obstacle/properties/_time",
-          "type": "number"
+          "type": "number",
+          "title": "Time",
+          "description": "Time offset in beats"
         },
         "_type": {
           "$id": "#/definitions/obstacle/properties/_type",
-          "type": "integer"
+          "type": "integer",
+          "title": "Type",
+          "description": "Type of this obstacle",
+          "examples": [
+            0,
+            1
+          ]
         },
         "_width": {
           "$id": "#/definitions/obstacle/properties/_width",
-          "type": "integer"
+          "type": "integer",
+          "title": "Width",
+          "description": "Width of this obstacle"
         },
         "_customData": {
           "$id": "#/definitions/obstacle/properties/_customData",
@@ -255,7 +283,9 @@
         },
         "_time": {
           "$id": "#/definitions/bpmChange/properties/_time",
-          "type": "number"
+          "type": "number",
+          "title": "Time",
+          "description": "Time offset in beats"
         }
       }
     }
