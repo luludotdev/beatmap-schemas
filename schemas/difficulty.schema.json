@@ -204,7 +204,7 @@
           "$id": "#/definitions/obstacle/properties/_lineIndex",
           "type": "integer",
           "title": "Line Index",
-          "description": "Note horizontal position, starting at far left"
+          "description": "Obstacle horizontal position, starting at far left"
         },
         "_time": {
           "$id": "#/definitions/obstacle/properties/_time",
