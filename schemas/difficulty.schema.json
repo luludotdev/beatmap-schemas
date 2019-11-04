@@ -53,28 +53,7 @@
       "description": "Difficulty custom data",
       "additionalProperties": true,
       "required": [],
-      "properties": {
-        "_bpmChanges": {
-          "$id": "#/properties/_customData/properties/_bpmChanges",
-          "type": "array",
-          "title": "BPM Changes",
-          "description": "Only used in mapping programs",
-          "items": { "$ref": "#/definitions/bpmChange" }
-        },
-        "_bookmarks": {
-          "$id": "#/properties/_customData/properties/_bookmarks",
-          "type": "array",
-          "title": "Bookmarks",
-          "description": "Only used in mapping programs",
-          "items": { "$ref": "#/definitions/bookmark" }
-        },
-        "_time": {
-          "$id": "#/properties/_customData/properties/_time",
-          "type": "integer",
-          "title": "Time spent Mapping",
-          "description": "Only used in mapping programs"
-        }
-      }
+      "properties": {}
     }
   },
   "definitions": {
@@ -235,57 +214,6 @@
           "description": "Obstacle custom data",
           "additionalProperties": true,
           "required": []
-        }
-      }
-    },
-    "bookmark": {
-      "$id": "#/definitions/bookmark",
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "_name",
-        "_time"
-      ],
-      "properties": {
-        "_name": {
-          "$id": "#/definitions/bookmark/properties/_name",
-          "type": "string",
-          "pattern": "^(.+)$"
-        },
-        "_time": {
-          "$id": "#/definitions/bookmark/properties/_time",
-          "type": "number"
-        }
-      }
-    },
-    "bpmChange": {
-      "$id": "#/definitions/bpmChange",
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "_beatsPerBar",
-        "_bpm",
-        "_metronomeOffset",
-        "_time"
-      ],
-      "properties": {
-        "_beatsPerBar": {
-          "$id": "#/definitions/bpmChange/properties/_beatsPerBar",
-          "type": "integer"
-        },
-        "_bpm": {
-          "$id": "#/definitions/bpmChange/properties/_bpm",
-          "type": "number"
-        },
-        "_metronomeOffset": {
-          "$id": "#/definitions/bpmChange/properties/_metronomeOffset",
-          "type": "integer"
-        },
-        "_time": {
-          "$id": "#/definitions/bpmChange/properties/_time",
-          "type": "number",
-          "title": "Time",
-          "description": "Time offset in beats"
         }
       }
     }
