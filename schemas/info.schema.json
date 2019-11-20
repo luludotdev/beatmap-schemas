@@ -129,7 +129,8 @@
         "MonstercatEnvironment",
         "DragonsEnvironment",
         "CrabRaveEnvironment",
-        "PanicEnvironment"
+        "PanicEnvironment",
+        "RocketEnvironment"
       ],
       "title": "Environment Name"
     },
