@@ -119,7 +119,8 @@
     "_environmentName": {
       "$id": "#/properties/_environmentName",
       "type": "string",
-      "enum": [
+      "title": "Environment Name",
+      "examples": [
         "DefaultEnvironment",
         "Origins",
         "TriangleEnvironment",
@@ -131,8 +132,7 @@
         "CrabRaveEnvironment",
         "PanicEnvironment",
         "RocketEnvironment"
-      ],
-      "title": "Environment Name"
+      ]
     },
     "_customData": {
       "$id": "#/properties/_customData",
