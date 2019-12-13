@@ -254,7 +254,9 @@
             "OneSaber",
             "NoArrows",
             "Lightshow",
-            "Lawless"
+            "Lawless",
+            "360Degree",
+            "90Degree"
           ],
           "pattern": "^(.+)$"
         },
