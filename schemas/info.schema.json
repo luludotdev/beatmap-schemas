@@ -20,6 +20,7 @@
     "_songFilename",
     "_coverImageFilename",
     "_environmentName",
+    "_allDirectionsEnvironmentName",
     "_difficultyBeatmapSets"
   ],
   "properties": {
@@ -132,6 +133,14 @@
         "CrabRaveEnvironment",
         "PanicEnvironment",
         "RocketEnvironment"
+      ]
+    },
+    "_allDirectionsEnvironmentName": {
+      "$id": "#/properties/_allDirectionsEnvironmentName",
+      "type": "string",
+      "title": "All Directions Environment Name",
+      "examples": [
+        "GlassDesertEnvironment"
       ]
     },
     "_customData": {
@@ -254,7 +263,9 @@
             "OneSaber",
             "NoArrows",
             "Lightshow",
-            "Lawless"
+            "Lawless",
+            "360Degree",
+            "90Degree"
           ],
           "pattern": "^(.+)$"
         },
