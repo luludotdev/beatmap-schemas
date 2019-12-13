@@ -132,7 +132,9 @@
         "DragonsEnvironment",
         "CrabRaveEnvironment",
         "PanicEnvironment",
-        "RocketEnvironment"
+        "RocketEnvironment",
+        "GreenDayEnvironment",
+        "GreenDayGrenadeEnvironment"
       ]
     },
     "_allDirectionsEnvironmentName": {
