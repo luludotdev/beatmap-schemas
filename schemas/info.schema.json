@@ -136,7 +136,7 @@
       ]
     },
     "_allDirectionsEnvironmentName": {
-      "$id": "#/properties/_environmentName",
+      "$id": "#/properties/_allDirectionsEnvironmentName",
       "type": "string",
       "title": "All Directions Environment Name",
       "examples": [
