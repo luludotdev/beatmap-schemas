@@ -5,24 +5,63 @@
   "title": "Info",
   "description": "Beat Saber Beatmap Info",
   "additionalProperties": false,
-  "required": [
-    "_version",
-    "_songName",
-    "_songSubName",
-    "_songAuthorName",
-    "_levelAuthorName",
-    "_beatsPerMinute",
-    "_songTimeOffset",
-    "_shuffle",
-    "_shufflePeriod",
-    "_previewStartTime",
-    "_previewDuration",
-    "_songFilename",
-    "_coverImageFilename",
-    "_environmentName",
-    "_allDirectionsEnvironmentName",
-    "_difficultyBeatmapSets"
-  ],
+  "if": {
+    "properties": {
+      "_difficultyBeatmapSets": {
+        "type": "array",
+        "contains": {
+          "type": "object",
+          "properties": {
+            "_beatmapCharacteristicName": {
+              "enum": [
+                "360Degree",
+                "90Degree"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "_version",
+      "_songName",
+      "_songSubName",
+      "_songAuthorName",
+      "_levelAuthorName",
+      "_beatsPerMinute",
+      "_songTimeOffset",
+      "_shuffle",
+      "_shufflePeriod",
+      "_previewStartTime",
+      "_previewDuration",
+      "_songFilename",
+      "_coverImageFilename",
+      "_environmentName",
+      "_allDirectionsEnvironmentName",
+      "_difficultyBeatmapSets"
+    ]
+  },
+  "else": {
+    "required": [
+      "_version",
+      "_songName",
+      "_songSubName",
+      "_songAuthorName",
+      "_levelAuthorName",
+      "_beatsPerMinute",
+      "_songTimeOffset",
+      "_shuffle",
+      "_shufflePeriod",
+      "_previewStartTime",
+      "_previewDuration",
+      "_songFilename",
+      "_coverImageFilename",
+      "_environmentName",
+      "_difficultyBeatmapSets"
+    ]
+  },
   "properties": {
     "$schema": {
       "type": "string",
@@ -157,7 +196,9 @@
           "$id": "#/properties/_customData/properties/_contributors",
           "type": "array",
           "title": "Array of Beatmap Contributors",
-          "items": { "$ref": "#/definitions/contributor" }
+          "items": {
+            "$ref": "#/definitions/contributor"
+          }
         },
         "_customEnvironment": {
           "$id": "#/properties/_customData/properties/_customEnvironment",
@@ -179,7 +220,9 @@
       "type": "array",
       "title": "Array of Beatmap Sets",
       "minItems": 1,
-      "items": { "$ref": "#/definitions/beatmapSet" }
+      "items": {
+        "$ref": "#/definitions/beatmapSet"
+      }
     }
   },
   "definitions": {
@@ -275,7 +318,9 @@
           "$id": "#/definitions/beatmapSet/properties/_difficultyBeatmaps",
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/definitions/beatmap" }
+          "items": {
+            "$ref": "#/definitions/beatmap"
+          }
         }
       }
     },
@@ -341,11 +386,21 @@
           "additionalProperties": true,
           "required": [],
           "properties": {
-            "_colorLeft": { "$ref": "#/definitions/color" },
-            "_colorRight": { "$ref": "#/definitions/color" },
-            "_envColorLeft": { "$ref": "#/definitions/color" },
-            "_envColorRight": { "$ref": "#/definitions/color" },
-            "_obstacleColor": { "$ref": "#/definitions/color" },
+            "_colorLeft": {
+              "$ref": "#/definitions/color"
+            },
+            "_colorRight": {
+              "$ref": "#/definitions/color"
+            },
+            "_envColorLeft": {
+              "$ref": "#/definitions/color"
+            },
+            "_envColorRight": {
+              "$ref": "#/definitions/color"
+            },
+            "_obstacleColor": {
+              "$ref": "#/definitions/color"
+            },
             "_difficultyLabel": {
               "$id": "#/definitions/beatmap/properties/_customData/properties/_difficultyLabel",
               "type": "string",
@@ -356,22 +411,30 @@
             "_warnings": {
               "$id": "#/definitions/beatmap/properties/_customData/properties/_warnings",
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             },
             "_information": {
               "$id": "#/definitions/beatmap/properties/_customData/properties/_information",
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             },
             "_suggestions": {
               "$id": "#/definitions/beatmap/properties/_customData/properties/_suggestions",
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             },
             "_requirements": {
               "$id": "#/definitions/beatmap/properties/_customData/properties/_warn_requirementsings",
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             }
           }
         }
