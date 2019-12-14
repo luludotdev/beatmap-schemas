@@ -336,6 +336,25 @@
         "_noteJumpMovementSpeed",
         "_noteJumpStartBeatOffset"
       ],
+      "if": { "properties": { "_difficultyRank": { "const": 1 } } },
+      "then": { "properties": { "_difficulty": { "const": "Easy" } } },
+      "else": {
+        "if": { "properties": { "_difficultyRank": { "const": 3 } } },
+        "then": { "properties": { "_difficulty": { "const": "Normal" } } },
+        "else": {
+          "if": { "properties": { "_difficultyRank": { "const": 5 } } },
+          "then": { "properties": { "_difficulty": { "const": "Hard" } } },
+          "else": {
+            "if": { "properties": { "_difficultyRank": { "const": 7 } } },
+            "then": { "properties": { "_difficulty": { "const": "Expert" } } },
+            "else": {
+              "if": { "properties": { "_difficultyRank": { "const": 9 } } },
+              "then": { "properties": { "_difficulty": { "const": "ExpertPlus" } } },
+              "else": true
+            }
+          }
+        }
+      },
       "properties": {
         "_difficulty": {
           "$id": "#/definitions/beatmap/properties/_difficulty",
