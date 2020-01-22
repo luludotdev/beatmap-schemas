@@ -77,7 +77,7 @@
           "$id": "#/definitions/event/properties/_type",
           "type": "integer",
           "title": "Type",
-          "description": "Type of this event"
+          "description": "Type of this event\n 0 = Back top lasers\n 1 = Track ring neons\n 2 = Left lasers\n 3 = Right lasers\n 4 = Bottom/back/side lasers\n 5-7 = [UNUSED]\n 8 = Ring rotation\n 9 = Ring zoom\n 10-11 = [UNUSED]\n 12 = Left laser rotation\n 13 = Right laser rotation"
         },
         "_value": {
           "$id": "#/definitions/event/properties/_value",
@@ -110,6 +110,7 @@
         "_cutDirection": {
           "$id": "#/definitions/note/properties/_cutDirection",
           "type": "integer",
+          "description": "The direction the saber must swing to cut this block.\n 0 = Up\n 1 = Down\n 2 = Left\n 3 = Right\n 4 = Up-left\n 5 = Up-right\n 6 = Down-left\n 7 = Down-right\n 8 = Any-direction (dot block)",
           "examples": [
             0,
             1,
@@ -144,7 +145,7 @@
           "$id": "#/definitions/note/properties/_type",
           "type": "integer",
           "title": "Type",
-          "description": "Type of this note",
+          "description": "Note block type.\n 0 = Red block\n 1 = Blue block\n 3 = Bomb",
           "examples": [
             0,
             1,
@@ -195,7 +196,7 @@
           "$id": "#/definitions/obstacle/properties/_type",
           "type": "integer",
           "title": "Type",
-          "description": "Type of this obstacle",
+          "description": "Type of this obstacle.\n 0 = Wall\n 1 = Ceiling",
           "examples": [
             0,
             1
@@ -205,7 +206,7 @@
           "$id": "#/definitions/obstacle/properties/_width",
           "type": "integer",
           "title": "Width",
-          "description": "Width of this obstacle"
+          "description": "Width of this obstacle.\n 1 = Single lane\n 2 = Two lanes\n Etc"
         },
         "_customData": {
           "$id": "#/definitions/obstacle/properties/_customData",
