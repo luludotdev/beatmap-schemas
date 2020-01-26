@@ -1,14 +1,14 @@
 # Beatmap Schemas
 _A collection of JSON Schemas for Beat Saber's Level Format_
 
-# VSCode setup
+# VS Code setup
 
-It's possible to set [VSCode](https://code.visualstudio.com/) to format, validate, and display tooltip hints for beatmap files using this schema.
+It's possible to set [VS Code](https://code.visualstudio.com/) to format, validate, and display tooltip hints for beatmap files using this schema.
 
-## Access the VSCode settings.json file:
-In VSCode, click on `File -> Preferences -> Settings` then click on the `Open Settings (JSON)` button in the top right corner of the page.
+## Access the VS Code settings.json file:
+In VS Code, click on `File -> Preferences -> Settings` then click on the `Open Settings (JSON)` button in the top right corner of the page.
 
-## Add the following code to your VSCode settings.json file.
+## Add the following code to your VS Code settings.json file.
 ```json
 "files.associations": {
     "*.dat": "json"
@@ -33,8 +33,8 @@ In VSCode, click on `File -> Preferences -> Settings` then click on the `Open Se
 ]
 ```
 
-## Open a beatmap in VSCode
-Now when you open a beatmap file in VSCode, you can format the document using the default JSON formatting by pressing:
+## Open a beatmap in VS Code
+Now when you open a beatmap file in VS Code, you can format the document using the default JSON formatting by pressing:
 `Shift + Alt + F` on Windows
 `Shift + Option + F` on Mac
 
