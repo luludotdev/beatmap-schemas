@@ -86,7 +86,7 @@
           "description": "Parameter value for this event"
         },
         "_customData": {
-          "$id": "#/definitions/note/properties/_customData",
+          "$id": "#/definitions/event/properties/_customData",
           "type": "object",
           "title": "Custom Data",
           "description": "Environment / lighting event custom data",
