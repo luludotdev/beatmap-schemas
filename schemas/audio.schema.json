@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/idolize/beatmap-schemas/master/schemas/audio.schema.json",
+  "title": "Audio Config",
+  "description": "Audio config file",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "description": "Version of this schema",
+      "type": "integer",
+      "minimum": 1
+    },
+    "lengthMs": {
+      "description": "Length of the song in milliseconds",
+      "type": "integer",
+      "minimum": 1
+    },
+    "notes": {
+      "description": "Any notes for users about the song",
+      "type": "string",
+      "maxLength": 500
+    },
+    "downloadUrls": {
+      "description": "URLs of where users can download an official copy of the song",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https?://.*"
+      }
+    },
+    "knownGoodHashes": {
+      "description": "Hashes of song files that are guaranteed to work with the map",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "Type of hash function",
+            "type": "string",
+            "enum": [
+              "sha256"
+            ]
+          },
+          "hash": {
+            "description": "Base 64 encoded hash",
+            "type": "string"
+          },
+          "additionalProperties": false
+        },
+        "required": [
+          "type",
+          "hash"
+        ]
+      }
+    },
+    "fingerprint": {
+      "description": "Config for how to handle the fingerprint checks",
+      "type": "object",
+      "properties": {
+        "startAtSecond": {
+          "description": "Where in the input file to start identifying the song",
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "patches": {
+      "description": "Audio changes to apply to the master track before use with the map",
+      "type": "object",
+      "properties": {
+        "delayStartMs": {
+          "description": "Add silence to beginning of song",
+          "type": "integer",
+          "minimum": 0
+        },
+        "padEndMs": {
+          "description": "Add silence to end of song",
+          "type": "integer",
+          "minimum": 0
+        },
+        "trim": {
+          "description": "Trim the audio to a selection",
+          "type": "object",
+          "properties": {
+            "startMs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "endMs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "additionalProperties": false
+          }
+        },
+        "fadeIn": {
+          "description": "Fade audio in at a certain time",
+          "type": "object",
+          "properties": {
+            "startMs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "durationMs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "additionalProperties": false
+          }
+        },
+        "fadeOut": {
+          "description": "Fade audio out at a certain time",
+          "type": "object",
+          "properties": {
+            "startMs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "durationMs": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "lengthMs"
+  ]
+}
