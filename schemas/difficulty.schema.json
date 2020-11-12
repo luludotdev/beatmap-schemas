@@ -17,7 +17,6 @@
       "format": "uri"
     },
     "_version": {
-      "$id": "#/properties/_version",
       "type": "string",
       "title": "Beatmap Version",
       "default": "2.0.0",
@@ -27,27 +26,23 @@
       "pattern": "^([2-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
     },
     "_events": {
-      "$id": "#/properties/_events",
       "type": "array",
       "title": "Events",
       "description": "Environment and lighting events",
       "items": { "$ref": "#/definitions/event" }
     },
     "_notes": {
-      "$id": "#/properties/_notes",
       "type": "array",
       "title": "Notes and Bombs",
       "items": { "$ref": "#/definitions/note" }
     },
     "_obstacles": {
-      "$id": "#/properties/_obstacles",
       "type": "array",
       "title": "Obstacles",
       "description": "Walls",
       "items": { "$ref": "#/definitions/obstacle" }
     },
     "_customData": {
-      "$id": "#/properties/_customData",
       "type": "object",
       "title": "Custom Data",
       "description": "Difficulty custom data",
@@ -58,7 +53,6 @@
   },
   "definitions": {
     "event": {
-      "$id": "#/definitions/event",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -68,25 +62,21 @@
       ],
       "properties": {
         "_time": {
-          "$id": "#/definitions/event/properties/_time",
           "type": "number",
           "title": "Time",
           "description": "Time offset in beats"
         },
         "_type": {
-          "$id": "#/definitions/event/properties/_type",
           "type": "integer",
           "title": "Type",
           "description": "Type of this event"
         },
         "_value": {
-          "$id": "#/definitions/event/properties/_value",
           "type": "integer",
           "title": "Value",
           "description": "Parameter value for this event"
         },
         "_customData": {
-          "$id": "#/definitions/event/properties/_customData",
           "type": "object",
           "title": "Custom Data",
           "description": "Environment / lighting event custom data",
@@ -96,7 +86,6 @@
       }
     },
     "note": {
-      "$id": "#/definitions/note",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -108,7 +97,6 @@
       ],
       "properties": {
         "_cutDirection": {
-          "$id": "#/definitions/note/properties/_cutDirection",
           "type": "integer",
           "examples": [
             0,
@@ -123,25 +111,21 @@
           ]
         },
         "_lineIndex": {
-          "$id": "#/definitions/note/properties/_lineIndex",
           "type": "integer",
           "title": "Line Index",
           "description": "Note horizontal position, starting at far left"
         },
         "_lineLayer": {
-          "$id": "#/definitions/note/properties/_lineLayer",
           "type": "integer",
           "title": "Line Layer",
           "description": "Note vertical position, starting at bottom"
         },
         "_time": {
-          "$id": "#/definitions/note/properties/_time",
           "type": "number",
           "title": "Time",
           "description": "Time offset in beats"
         },
         "_type": {
-          "$id": "#/definitions/note/properties/_type",
           "type": "integer",
           "title": "Type",
           "description": "Type of this note",
@@ -152,7 +136,6 @@
           ]
         },
         "_customData": {
-          "$id": "#/definitions/note/properties/_customData",
           "type": "object",
           "title": "Custom Data",
           "description": "Note / bomb custom data",
@@ -162,7 +145,6 @@
       }
     },
     "obstacle": {
-      "$id": "#/definitions/obstacle",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -174,25 +156,21 @@
       ],
       "properties": {
         "_duration": {
-          "$id": "#/definitions/obstacle/properties/_duration",
           "type": "number",
           "title": "Duration",
           "description": "Duration in beats"
         },
         "_lineIndex": {
-          "$id": "#/definitions/obstacle/properties/_lineIndex",
           "type": "integer",
           "title": "Line Index",
           "description": "Obstacle horizontal position, starting at far left"
         },
         "_time": {
-          "$id": "#/definitions/obstacle/properties/_time",
           "type": "number",
           "title": "Time",
           "description": "Time offset in beats"
         },
         "_type": {
-          "$id": "#/definitions/obstacle/properties/_type",
           "type": "integer",
           "title": "Type",
           "description": "Type of this obstacle",
@@ -202,13 +180,11 @@
           ]
         },
         "_width": {
-          "$id": "#/definitions/obstacle/properties/_width",
           "type": "integer",
           "title": "Width",
           "description": "Width of this obstacle"
         },
         "_customData": {
-          "$id": "#/definitions/obstacle/properties/_customData",
           "type": "object",
           "title": "Custom Data",
           "description": "Obstacle custom data",
