@@ -5,63 +5,52 @@
   "title": "Info",
   "description": "Beat Saber Beatmap Info",
   "additionalProperties": false,
-  "if": {
-    "properties": {
-      "_difficultyBeatmapSets": {
-        "type": "array",
-        "contains": {
-          "type": "object",
-          "properties": {
-            "_beatmapCharacteristicName": {
-              "enum": [
-                "360Degree",
-                "90Degree"
-              ]
+  "allOf": [
+    {
+      "required": [
+        "_version",
+        "_songName",
+        "_songSubName",
+        "_songAuthorName",
+        "_levelAuthorName",
+        "_beatsPerMinute",
+        "_songTimeOffset",
+        "_shuffle",
+        "_shufflePeriod",
+        "_previewStartTime",
+        "_previewDuration",
+        "_songFilename",
+        "_coverImageFilename",
+        "_environmentName",
+        "_difficultyBeatmapSets"
+      ]
+    },
+    {
+      "if": {
+        "properties": {
+          "_difficultyBeatmapSets": {
+            "type": "array",
+            "contains": {
+              "type": "object",
+              "properties": {
+                "_beatmapCharacteristicName": {
+                  "enum": [
+                    "360Degree",
+                    "90Degree"
+                  ]
+                }
+              }
             }
           }
         }
+      },
+      "then": {
+        "required": [
+          "_allDirectionsEnvironmentName"
+        ]
       }
     }
-  },
-  "then": {
-    "required": [
-      "_version",
-      "_songName",
-      "_songSubName",
-      "_songAuthorName",
-      "_levelAuthorName",
-      "_beatsPerMinute",
-      "_songTimeOffset",
-      "_shuffle",
-      "_shufflePeriod",
-      "_previewStartTime",
-      "_previewDuration",
-      "_songFilename",
-      "_coverImageFilename",
-      "_environmentName",
-      "_allDirectionsEnvironmentName",
-      "_difficultyBeatmapSets"
-    ]
-  },
-  "else": {
-    "required": [
-      "_version",
-      "_songName",
-      "_songSubName",
-      "_songAuthorName",
-      "_levelAuthorName",
-      "_beatsPerMinute",
-      "_songTimeOffset",
-      "_shuffle",
-      "_shufflePeriod",
-      "_previewStartTime",
-      "_previewDuration",
-      "_songFilename",
-      "_coverImageFilename",
-      "_environmentName",
-      "_difficultyBeatmapSets"
-    ]
-  },
+  ],
   "properties": {
     "$schema": {
       "type": "string",
