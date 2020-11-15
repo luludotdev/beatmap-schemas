@@ -166,7 +166,6 @@
       "title": "Custom Data",
       "description": "Top-level custom data",
       "additionalProperties": true,
-      "required": [],
       "properties": {
         "_contributors": {
           "type": "array",
@@ -357,7 +356,6 @@
           "title": "Custom Data",
           "description": "Custom data scoped to a single difficulty",
           "additionalProperties": true,
-          "required": [],
           "properties": {
             "_colorLeft": {
               "$ref": "#/definitions/color"

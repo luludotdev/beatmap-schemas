@@ -47,7 +47,6 @@
       "title": "Custom Data",
       "description": "Difficulty custom data",
       "additionalProperties": true,
-      "required": [],
       "properties": {}
     }
   },
@@ -80,8 +79,7 @@
           "type": "object",
           "title": "Custom Data",
           "description": "Environment / lighting event custom data",
-          "additionalProperties": true,
-          "required": []
+          "additionalProperties": true
         }
       }
     },
@@ -139,8 +137,7 @@
           "type": "object",
           "title": "Custom Data",
           "description": "Note / bomb custom data",
-          "additionalProperties": true,
-          "required": []
+          "additionalProperties": true
         }
       }
     },
@@ -188,8 +185,7 @@
           "type": "object",
           "title": "Custom Data",
           "description": "Obstacle custom data",
-          "additionalProperties": true,
-          "required": []
+          "additionalProperties": true
         }
       }
     }
