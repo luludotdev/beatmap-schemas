@@ -148,7 +148,10 @@
         "PanicEnvironment",
         "RocketEnvironment",
         "GreenDayEnvironment",
-        "GreenDayGrenadeEnvironment"
+        "GreenDayGrenadeEnvironment",
+        "TimbalandEnvironment",
+        "FitBeatEnvironment",
+        "LinkinParkEnvironment"
       ]
     },
     "_allDirectionsEnvironmentName": {
