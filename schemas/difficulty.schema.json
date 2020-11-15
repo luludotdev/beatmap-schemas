@@ -5,11 +5,30 @@
   "title": "Difficulty",
   "description": "Beat Saber Beatmap Level",
   "additionalProperties": false,
-  "required": [
-    "_version",
-    "_events",
-    "_notes",
-    "_obstacles"
+  "allOf": [
+    {
+      "required": [
+        "_version",
+        "_events",
+        "_notes",
+        "_obstacles"
+      ]
+    },
+    {
+      "if": {
+        "properties": {
+          "_version": {
+            "type": "string",
+            "pattern": "^([2-9]\\d*)\\.([2-9]\\d*)\\.(0|[1-9]\\d*)$"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "_waypoints"
+        ]
+      }
+    }
   ],
   "properties": {
     "$schema": {
@@ -19,9 +38,9 @@
     "_version": {
       "type": "string",
       "title": "Beatmap Version",
-      "default": "2.0.0",
+      "default": "2.2.0",
       "examples": [
-        "2.0.0"
+        "2.2.0"
       ],
       "pattern": "^([2-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
     },
@@ -41,6 +60,22 @@
       "title": "Obstacles",
       "description": "Walls",
       "items": { "$ref": "#/definitions/obstacle" }
+    },
+    "_waypoints": {
+      "type": "array",
+      "title": "Waypoints",
+      "items": { "$ref": "#/definitions/waypoint" }
+    },
+    "_specialEventsKeywordFilters": {
+      "type": "object",
+      "title": "Special Events Keyword Filters",
+      "additionalProperties": false,
+      "properties": {
+        "_keywords": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/keyword" }
+        }
+      }
     },
     "_customData": {
       "type": "object",
@@ -186,6 +221,70 @@
           "title": "Custom Data",
           "description": "Obstacle custom data",
           "additionalProperties": true
+        }
+      }
+    },
+    "waypoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_time",
+        "_lineIndex",
+        "_lineLayer",
+        "_offsetDirection"
+      ],
+      "properties": {
+        "_time": {
+          "type": "number",
+          "title": "Duration",
+          "description": "Duration in beats"
+        },
+        "_lineIndex": {
+          "type": "integer",
+          "title": "Line Index",
+          "description": "Note horizontal position, starting at far left"
+        },
+        "_lineLayer": {
+          "type": "integer",
+          "title": "Line Layer",
+          "description": "Note vertical position, starting at bottom"
+        },
+        "_offsetDirection": {
+          "type": "integer",
+          "title": "Offset Direction",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    "keyword": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_keyword",
+        "_specialEvents"
+      ],
+      "properties": {
+        "_keyword": {
+          "type": "string",
+          "title": "Keyword",
+          "minLength": 1
+        },
+        "_specialEvents": {
+          "type": "array",
+          "title": "Special Events",
+          "items": {
+            "type": "integer"
+          }
         }
       }
     }
